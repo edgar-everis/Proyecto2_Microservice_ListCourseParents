@@ -1,6 +1,7 @@
 package com.main.serviceimpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.main.model.ListCourseParents;
 import com.main.repository.ListCourseParentsRepository;
@@ -9,6 +10,7 @@ import com.main.service.ListCourseService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Service
 public class ListCourseServiceImpl implements ListCourseService {
 
 	@Autowired
@@ -17,7 +19,7 @@ public class ListCourseServiceImpl implements ListCourseService {
 	@Override
 	public Flux<ListCourseParents> findByIdstuteac(String idstuteac) {
 	
-		return repository.findByIdstuteach(idstuteac);	}
+		return repository.findByIdstuteac(idstuteac);	}
 
 	@Override
 	public Flux<ListCourseParents> GetAll() {
