@@ -8,7 +8,8 @@ import com.main.model.ListCourseParents;
 import reactor.core.publisher.Flux;
 
 @Repository
-public interface ListCourseParentsRepository extends ReactiveMongoRepository<ListCourseParents, String> {
+public interface ListCourseParentsRepository
+    extends ReactiveMongoRepository<ListCourseParents, String> {
 
-	Flux<ListCourseParents> findByIdstuteac(String idstuteac);
+  Flux<ListCourseParents> findByIdstuteac(String idstuteac);
 }

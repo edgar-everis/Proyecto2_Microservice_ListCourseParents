@@ -17,20 +17,11 @@ import lombok.Setter;
 @Document(collection = "ListCourseParents")
 public class ListCourseParents {
 
+  @Id private String id;
 
-    @Id
-    private String id;
+  @NotEmpty private String idcourse;
 
-    @NotEmpty
-    private String idparent;
+  @NotEmpty private String idparent;
 
-    @NotEmpty
-    private String idcourse;
-    
-    @NotEmpty
-    private String idstuteac;
-    
-
-
-    
+  @NotEmpty private String idstuteac;
 }

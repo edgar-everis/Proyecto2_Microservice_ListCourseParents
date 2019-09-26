@@ -2,21 +2,20 @@ package com.main.service;
 
 import com.main.model.ListCourseParents;
 
-
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface ListCourseService {
 
-	    Flux<ListCourseParents> findByIdstuteac(String idstuteac);
-	
-	    Flux<ListCourseParents> GetAll();
+  Mono<ListCourseParents> CreateListSCourseParents(ListCourseParents listcourseparents);
 
-	    Mono<ListCourseParents> findById(String id);
+  Mono<Void> DeleteById(String id);
 
-	    Mono<ListCourseParents> CreateListSCourseParents(ListCourseParents listcourseparents);
+  Mono<ListCourseParents> findById(String id);
 
-	    Mono<ListCourseParents> ModifyListSCourseParents(String id, ListCourseParents listcourseparents);
+  Flux<ListCourseParents> findByIdstuteac(String idstuteac);
 
-	    Mono<Void> DeleteById(String id);
+  Flux<ListCourseParents> GetAll();
+
+  Mono<ListCourseParents> ModifyListSCourseParents(String id, ListCourseParents listcourseparents);
 }

@@ -13,45 +13,43 @@ import reactor.core.publisher.Mono;
 @Service
 public class ListCourseServiceImpl implements ListCourseService {
 
-	@Autowired
-	private ListCourseParentsRepository repository;
+  @Autowired private ListCourseParentsRepository repository;
 
-	@Override
-	public Flux<ListCourseParents> findByIdstuteac(String idstuteac) {
-	
-		return repository.findByIdstuteac(idstuteac);	}
+  @Override
+  public Mono<ListCourseParents> CreateListSCourseParents(ListCourseParents listcourseparents) {
+    // TODO Auto-generated method stub
+    return repository.save(listcourseparents);
+  }
 
-	@Override
-	public Flux<ListCourseParents> GetAll() {
-	
-		return repository.findAll();
-	}
+  @Override
+  public Mono<Void> DeleteById(String id) {
+    // TODO Auto-generated method stub
+    return repository.deleteById(id);
+  }
 
-	@Override
-	public Mono<ListCourseParents> findById(String id) {
-		
-		return repository.findById(id);
-	}
+  @Override
+  public Mono<ListCourseParents> findById(String id) {
 
-	@Override
-	public Mono<Void> DeleteById(String id) {
-		// TODO Auto-generated method stub
-		return repository.deleteById(id);
-	}
+    return repository.findById(id);
+  }
 
-	@Override
-	public Mono<ListCourseParents> CreateListSCourseParents(ListCourseParents listcourseparents) {
-		// TODO Auto-generated method stub
-		return repository.save(listcourseparents);
-	}
+  @Override
+  public Flux<ListCourseParents> findByIdstuteac(String idstuteac) {
 
-	@Override
-	public Mono<ListCourseParents> ModifyListSCourseParents(String id, ListCourseParents listcourseparents) {
-		// TODO Auto-generated method stub
-		listcourseparents.setId(id);
-		return repository.save(listcourseparents);
-	}
-	
-	
+    return repository.findByIdstuteac(idstuteac);
+  }
 
+  @Override
+  public Flux<ListCourseParents> GetAll() {
+
+    return repository.findAll();
+  }
+
+  @Override
+  public Mono<ListCourseParents> ModifyListSCourseParents(
+      String id, ListCourseParents listcourseparents) {
+    // TODO Auto-generated method stub
+    listcourseparents.setId(id);
+    return repository.save(listcourseparents);
+  }
 }
