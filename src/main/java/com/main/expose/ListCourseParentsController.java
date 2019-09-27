@@ -28,7 +28,7 @@ public class ListCourseParentsController {
   @ResponseStatus(HttpStatus.CREATED)
   public Mono<ListCourseParents> createListCourseParents(
       @RequestBody ListCourseParents listcourseparents) {
-    return service.CreateListSCourseParents(listcourseparents);
+    return service.CreateListCourseParents(listcourseparents);
   }
 
   @DeleteMapping("/delete/{id}")

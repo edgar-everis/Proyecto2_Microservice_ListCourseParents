@@ -7,11 +7,11 @@ import reactor.core.publisher.Mono;
 
 public interface ListCourseService {
 
-  Mono<ListCourseParents> CreateListSCourseParents(ListCourseParents listcourseparents);
+  Mono <ListCourseParents> CreateListCourseParents(ListCourseParents listcourseparents);
 
-  Mono<Void> DeleteById(String id);
+  Mono <Void> DeleteById(String id);
 
-  Mono<ListCourseParents> findById(String id);
+  Mono <ListCourseParents> findById(String id);
 
   Flux<ListCourseParents> findByIdstuteac(String idstuteac);
 

@@ -16,7 +16,7 @@ public class ListCourseServiceImpl implements ListCourseService {
   @Autowired private ListCourseParentsRepository repository;
 
   @Override
-  public Mono<ListCourseParents> CreateListSCourseParents(ListCourseParents listcourseparents) {
+  public Mono<ListCourseParents> CreateListCourseParents(ListCourseParents listcourseparents) {
     // TODO Auto-generated method stub
     return repository.save(listcourseparents);
   }
